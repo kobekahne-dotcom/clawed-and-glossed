@@ -188,6 +188,57 @@ body.js .hf.up{opacity:1;transform:none}
 .confirm li{list-style:none;font-size:.88rem;color:var(--mut);padding:3px 0}
 .confirm li:before{content:'— '}
 
+
+/* ===== the assistant: owns the CONVERSATION, hands off to her real calendar ===== */
+.asst{max-width:900px;margin:0 auto 26px;background:var(--ink);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.asst-hd{display:flex;align-items:center;gap:12px;padding:16px 20px;background:linear-gradient(100deg,#2a0f1d,#1a1018);border-bottom:1px solid var(--line)}
+.asst-hd .av{width:38px;height:38px;border-radius:50%;background:var(--pink);color:#fff;display:flex;align-items:center;
+  justify-content:center;font-family:'Anton',sans-serif;font-size:1.1rem;flex:none}
+.asst-hd b{display:block;font-size:.95rem;line-height:1.25}
+.asst-hd small{color:var(--mut);font-size:.72rem}
+.asst-hd .live{margin-left:auto;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--pink);
+  border:1px solid rgba(255,61,139,.4);border-radius:999px;padding:5px 10px;font-weight:800;white-space:nowrap}
+.chat{height:410px;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:10px;background:#0a080c}
+.m{max-width:82%;padding:11px 15px;border-radius:15px;font-size:.92rem;line-height:1.5;animation:pop .3s var(--ease)}
+@keyframes pop{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+.m.bot{align-self:flex-start;background:var(--ink-3);border:1px solid var(--line);border-bottom-left-radius:5px}
+.m.me{align-self:flex-end;background:var(--pink);color:#fff;border-bottom-right-radius:5px;font-weight:600}
+.m b{color:#fff}
+.typing{align-self:flex-start;background:var(--ink-3);border:1px solid var(--line);border-radius:15px;
+  border-bottom-left-radius:5px;padding:13px 16px;display:flex;gap:4px}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--pink);animation:tb 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+@keyframes tb{0%,60%,100%{opacity:.25}30%{opacity:1}}
+.qcard{align-self:flex-start;max-width:88%;background:var(--ink-3);border:1px solid rgba(255,61,139,.35);
+  border-radius:15px;border-bottom-left-radius:5px;padding:14px;animation:pop .3s var(--ease)}
+.qcard h6{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:10px;font-weight:800}
+.qline{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+.qline:last-of-type{border:none}
+.qline .v{font-weight:700;color:#fff;white-space:nowrap}
+.qcard .go{display:block;text-align:center;margin-top:12px;background:var(--pink);color:#fff;border-radius:999px;
+  padding:12px;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800}
+.qcard .note{font-size:.72rem;color:var(--mut);margin-top:9px;text-align:center}
+.quick{display:flex;gap:7px;flex-wrap:wrap;padding:11px 16px;background:var(--ink-2);border-top:1px solid var(--line)}
+.quick button{background:transparent;border:1px solid var(--line);color:var(--cream);border-radius:999px;
+  padding:8px 14px;font-size:.76rem;cursor:pointer;font-family:inherit;transition:.2s}
+.quick button:hover{border-color:var(--pink);color:var(--pink)}
+.inbar{display:flex;gap:9px;padding:13px 16px;background:var(--ink-2);border-top:1px solid var(--line)}
+.inbar input{flex:1;background:var(--ink);border:1px solid var(--line);border-radius:999px;padding:12px 16px;
+  font-family:inherit;font-size:.92rem;color:var(--cream);outline:none}
+.inbar input:focus{border-color:var(--pink)}
+.inbar button{border:none;background:var(--pink);color:#fff;border-radius:50%;width:44px;flex:none;cursor:pointer;font-size:1rem}
+.lead-panel{max-width:900px;margin:0 auto 26px;background:var(--ink-2);border:1px solid var(--line);border-radius:20px;padding:24px}
+.lead-panel h4{font-family:'Manrope';font-weight:800;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:6px}
+.lead-panel .lp{color:var(--mut);font-size:.88rem;margin-bottom:16px}
+.lrow{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--ink);border:1px solid var(--line);
+  border-radius:12px;padding:12px 15px;margin-bottom:8px;font-size:.9rem;animation:pop .3s var(--ease);flex-wrap:wrap}
+.lrow small{display:block;color:var(--mut);font-size:.78rem}
+.lrow .tag{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.tag.booked{background:rgba(255,61,139,.16);color:var(--pink)}
+.tag.follow{background:rgba(255,255,255,.09);color:var(--mut)}
+.lempty{color:var(--mut);font-size:.86rem;font-style:italic}
+@media (max-width:660px){.chat{height:360px}.asst-hd .live{display:none}}
+
 /* sticky bar */
 #sticky{display:none;position:fixed;left:0;right:0;bottom:0;z-index:1010;gap:10px;background:rgba(12,10,14,.96);
   backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
@@ -415,6 +466,33 @@ footer .fine{font-size:.7rem;color:var(--mut);opacity:.7}
       <h2>Let's get you <span class="gl">booked.</span></h2>
       <p>Booking runs through my page — pick your service and length, and grab a time that works.</p>
     </div>
+    <div class="asst rv">
+      <div class="asst-hd">
+        <span class="av">K</span>
+        <div><b>Kaia&#39;s assistant</b><small>answers instantly &middot; even when I&#39;m mid-set</small></div>
+        <span class="live">Uses my real menu</span>
+      </div>
+      <div class="chat" id="chat">
+        <div class="m bot">Hey! &#128133; I&#39;m Kaia&#39;s assistant. Tell me what you want and I&#39;ll price it out and get you booked. What are you thinking?</div>
+      </div>
+      <div class="quick" id="quick">
+        <button data-q="xl gel-x full set with some art">XL set + art</button>
+        <button data-q="how much is a medium gel-x fill">Medium fill?</button>
+        <button data-q="just a gel polish change">Polish change</button>
+        <button data-q="short builder gel please">Short builder gel</button>
+      </div>
+      <div class="inbar">
+        <input id="cin" placeholder="Type it like you&#39;d text her&hellip;" autocomplete="off">
+        <button id="csend" aria-label="Send">&#10142;</button>
+      </div>
+    </div>
+
+    <div class="lead-panel rv">
+      <h4>Kaia&#39;s side &mdash; nothing gets lost</h4>
+      <p class="lp">Every person who asks shows up here with what they wanted and how to reach them &mdash; even the ones who don&#39;t finish booking. That&#39;s the part a booking app never catches.</p>
+      <div id="leads"><p class="lempty">Try the assistant above and watch an enquiry land here.</p></div>
+    </div>
+
     <div class="bc rv">
       <div class="bk-l">
         <div class="st">★★★★★</div>
@@ -469,6 +547,100 @@ addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>30)
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 document.getElementById('yr').textContent=new Date().getFullYear();
+
+/* ---------- the assistant ----------
+   Quotes from Kaia's REAL menu, captures the enquiry, then hands off to her real
+   Goldie link. It never invents availability - her own calendar owns that. */
+var MENU=[
+ {k:['xl','extra long'], t:'full', n:'XL Gel-X full set', p:65, d:'3 h'},
+ {k:['long'],            t:'full', n:'L Gel-X full set',  p:60, d:'2 h 45'},
+ {k:['medium'],          t:'full', n:'M Gel-X full set',  p:55, d:'2 h 30'},
+ {k:['short',''],        t:'full', n:'S Gel-X full set',  p:50, d:'2 h 30'},
+ {k:['xl','extra long'], t:'fill', n:'XL Gel-X fill',     p:65, d:'2 h 45'},
+ {k:['long'],            t:'fill', n:'L Gel-X fill',      p:55, d:'2 h 30'},
+ {k:['medium'],          t:'fill', n:'M Gel-X fill',      p:45, d:'2 h 30'},
+ {k:['short',''],        t:'fill', n:'S Gel-X fill',      p:40, d:'2 h 15'},
+ {k:['long'],            t:'builder', n:'L builder gel',  p:50, d:'2 h 30'},
+ {k:['medium'],          t:'builder', n:'M builder gel',  p:45, d:'2 h 10'},
+ {k:['short',''],        t:'builder', n:'S builder gel',  p:40, d:'2 h'},
+ {k:[''],                t:'mani',   n:'Manicure',        p:35, d:'1 h 30'},
+ {k:[''],                t:'polish', n:'Gel polish change', p:25, d:'1 h 5'}
+];
+function pickService(txt){
+  var m=' '+txt.toLowerCase()+' ', type='full';
+  if(/polish change|colour change|color change|just polish/.test(m)) type='polish';
+  else if(/manicure|\bmani\b/.test(m)) type='mani';
+  else if(/builder/.test(m)) type='builder';
+  else if(/fill|refill|rebalance/.test(m)) type='fill';
+  var cands=MENU.filter(function(x){return x.t===type;});
+  for(var i=0;i<cands.length;i++){
+    for(var j=0;j<cands[i].k.length;j++){
+      var key=cands[i].k[j];
+      if(key!=='' && m.indexOf(key)>-1) return cands[i];
+    }
+  }
+  return cands[cands.length-1];
+}
+function wantsArt(t){return /art|design|chrome|charm|3d|french|cow|flower|glitter|bling|paint|cute|vibe/.test(t.toLowerCase());}
+
+var chat=document.getElementById('chat'), quick=document.getElementById('quick');
+var cin=document.getElementById('cin'), leadsEl=document.getElementById('leads');
+var leads=[], onText=null, pending=null;
+function sc(){chat.scrollTop=chat.scrollHeight;}
+function bub(h,w){var d=document.createElement('div');d.className='m '+(w||'bot');d.innerHTML=h;chat.appendChild(d);sc();return d;}
+function typ(){var d=document.createElement('div');d.className='typing';d.innerHTML='<i></i><i></i><i></i>';chat.appendChild(d);sc();return d;}
+function el(h){var w=document.createElement('div');w.innerHTML=h.trim();var n=w.firstChild;chat.appendChild(n);sc();return n;}
+function wait(ms){return new Promise(function(r){setTimeout(r,ms);});}
+function say(h,ms){var t=typ();return wait(ms||620).then(function(){t.remove();return bub(h);});}
+
+function handle(txt){
+  bub(txt.replace(/</g,'&lt;'),'me');
+  quick.style.display='none'; cin.value='';
+  if(onText){var f=onText; onText=null; return f(txt);}
+  var sv=pickService(txt), art=wantsArt(txt);
+  pending={svc:sv.n, price:sv.p};
+  say('Got it &mdash; let me price that up for you.',600).then(function(){
+    el('<div class="qcard"><h6>Your quote</h6>'+
+      '<div class="qline"><span>'+sv.n+'</span><span class="v">$'+sv.p+'</span></div>'+
+      '<div class="qline"><span>About how long</span><span class="v">'+sv.d+'</span></div>'+
+      (art?'<div class="qline"><span>Nail art add-on</span><span class="v">ask Kaia</span></div>':'')+
+      '<div class="qline"><span>Deposit to book</span><span class="v">$'+Math.round(sv.p*0.1)+'</span></div>'+
+      '<a class="go" href="https://book.heygoldie.com/Clawedandglossed" target="_blank" rel="noopener">Pick your time &rarr;</a>'+
+      '<p class="note">Opens Kaia&#39;s booking page for live availability</p></div>');
+    return say('Want me to let Kaia know you&#39;re coming? Send your <b>name + phone or insta</b>.',780);
+  }).then(function(){
+    onText=function(t){
+      var parts=t.split(/[,·]/), nm=(parts[0]||'Someone').trim(), ct=(parts[1]||'').trim();
+      return say('Perfect, '+nm.split(' ')[0]+' &mdash; Kaia&#39;s got it. Grab your time on the booking page and she&#39;ll see you soon &#128150;',700)
+        .then(function(){
+          leads.push({name:nm,contact:ct||'(no contact given)',svc:pending.svc,price:pending.price,status:'booked'});
+          renderLeads();
+        });
+    };
+    setTimeout(function(){
+      if(onText && pending){
+        onText=null;
+        leads.push({name:'Someone enquiring',contact:'(left without giving contact)',svc:pending.svc,price:pending.price,status:'follow'});
+        renderLeads();
+      }
+    },10000);
+  });
+}
+function renderLeads(){
+  if(!leads.length){leadsEl.innerHTML='<p class="lempty">Try the assistant above and watch an enquiry land here.</p>';return;}
+  leadsEl.innerHTML=leads.map(function(l){
+    return '<div class="lrow"><div><b>'+l.name+'</b> &mdash; '+l.svc+' ($'+l.price+')<small>'+l.contact+'</small></div>'+
+      '<span class="tag '+l.status+'">'+(l.status==='booked'?'sent to booking':'needs follow-up')+'</span></div>';
+  }).join('');
+}
+function submitChat(){var v=cin.value.trim(); if(v) handle(v);}
+document.getElementById('csend').addEventListener('click',submitChat);
+cin.addEventListener('keydown',function(e){if(e.key==='Enter')submitChat();});
+Array.prototype.forEach.call(quick.querySelectorAll('button'),function(b){
+  b.addEventListener('click',function(){handle(b.getAttribute('data-q'));});
+});
+renderLeads();
+
 </script>
 </body>
 </html>
