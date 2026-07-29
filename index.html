@@ -239,6 +239,77 @@ body.js .hf.up{opacity:1;transform:none}
 .lempty{color:var(--mut);font-size:.86rem;font-style:italic}
 @media (max-width:660px){.chat{height:360px}.asst-hd .live{display:none}}
 
+
+/* ===== full booking flow, her brand ===== */
+.bk-wrap{max-width:900px;margin:0 auto 26px;background:var(--ink);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.bk-tabs{display:flex;border-bottom:1px solid var(--line);background:var(--ink-2)}
+.bk-tab{flex:1;padding:15px;background:none;border:none;cursor:pointer;font-family:inherit;font-size:.74rem;
+  letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--mut);transition:.2s}
+.bk-tab.on{background:var(--ink);color:var(--pink);box-shadow:inset 0 -2px 0 var(--pink)}
+.bk-pane{padding:24px}
+.steps{display:flex;gap:7px;margin-bottom:20px;flex-wrap:wrap}
+.stp{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--mut);
+  border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+.stp.on{border-color:var(--pink);color:var(--pink)}
+.stp.done{border-color:rgba(255,61,139,.4);color:rgba(255,61,139,.7)}
+.svcgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.svc{text-align:left;background:var(--ink-3);border:1px solid var(--line);border-radius:12px;padding:14px;
+  cursor:pointer;font-family:inherit;color:var(--cream);transition:.2s var(--ease)}
+.svc:hover{border-color:var(--pink);transform:translateY(-2px)}
+.svc b{display:block;font-size:.92rem;margin-bottom:4px}
+.svc small{color:var(--mut);font-size:.78rem}
+.svc .p{float:right;color:var(--pink);font-weight:800;font-family:'Anton',sans-serif;font-size:1.1rem}
+.daybar{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:15px}
+.day{flex:none;min-width:74px;text-align:center;background:var(--ink-3);border:1px solid var(--line);
+  border-radius:11px;padding:10px 7px;cursor:pointer;font-family:inherit;color:var(--cream);transition:.2s}
+.day:hover{border-color:var(--pink)}
+.day.sel{border-color:var(--pink);background:rgba(255,61,139,.12)}
+.day.shut{opacity:.3;cursor:not-allowed}
+.day .dw{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);font-weight:800}
+.day .dd{font-family:'Anton',sans-serif;font-size:1.1rem}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px}
+.slot{background:var(--ink-3);border:1px solid var(--line);border-radius:10px;padding:11px 6px;cursor:pointer;
+  font-family:inherit;font-size:.86rem;font-weight:700;color:var(--cream);transition:.2s}
+.slot:hover{border-color:var(--pink);color:var(--pink)}
+.slot.sel{background:var(--pink);color:#fff;border-color:var(--pink)}
+.none{color:var(--mut);font-size:.88rem;font-style:italic;padding:8px 0}
+.frm{display:grid;gap:11px;max-width:420px}
+.frm label{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);font-weight:800;margin-bottom:4px;display:block}
+.frm input{width:100%;background:var(--ink-3);border:1px solid var(--line);border-radius:9px;padding:12px 14px;
+  font-family:inherit;font-size:.92rem;color:var(--cream);outline:none}
+.frm input:focus{border-color:var(--pink)}
+.sumbox{background:var(--ink-3);border:1px solid var(--line);border-radius:13px;padding:17px;margin-bottom:15px}
+.sumrow{display:flex;justify-content:space-between;gap:12px;padding:6px 0;font-size:.9rem;color:var(--mut)}
+.sumrow .v{color:var(--cream);font-weight:700}
+.sumrow.tot{border-top:1px solid var(--line);margin-top:5px;padding-top:11px}
+.sumrow.tot .v{color:var(--pink);font-family:'Anton',sans-serif;font-size:1.25rem}
+.okbox{text-align:center;padding:20px}
+.okbox .tick{width:50px;height:50px;border-radius:50%;background:var(--pink);color:#fff;display:flex;
+  align-items:center;justify-content:center;margin:0 auto 13px;font-size:1.4rem;font-weight:700}
+.okbox h3{font-size:1.5rem;margin-bottom:7px}
+.okbox p{color:var(--mut);font-size:.92rem}
+.okbox .row2{display:flex;gap:10px;justify-content:center;margin-top:17px;flex-wrap:wrap}
+.bnote{font-size:.78rem;color:var(--mut);margin-top:13px}
+.bnote b{color:var(--pink)}
+.ogrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.obox{background:var(--ink-3);border:1px solid var(--line);border-radius:13px;padding:17px}
+.obox h4{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--pink);margin-bottom:12px;font-weight:800}
+.obox .two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.obox select,.obox input{width:100%;background:var(--ink);border:1px solid var(--line);border-radius:9px;
+  padding:10px 12px;font-family:inherit;font-size:.88rem;color:var(--cream);outline:none;margin-bottom:8px}
+.obox select:focus,.obox input:focus{border-color:var(--pink)}
+.obox .go{width:100%;background:var(--pink);color:#fff;border:none;border-radius:9px;padding:11px;
+  font-family:inherit;font-weight:800;cursor:pointer;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase}
+.obox .go.alt{background:transparent;border:1px solid var(--line);color:var(--cream)}
+.schedhd{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:11px}
+.schedhd h4{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--pink);font-weight:800}
+.exp{background:transparent;border:1px solid var(--pink);color:var(--pink);border-radius:8px;padding:8px 14px;
+  font-family:inherit;font-size:.72rem;font-weight:800;cursor:pointer;letter-spacing:.1em;text-transform:uppercase}
+.exp:hover{background:var(--pink);color:#fff}
+@media(max-width:760px){.ogrid{grid-template-columns:1fr}}
+
+.hide{display:none!important}
+
 /* sticky bar */
 #sticky{display:none;position:fixed;left:0;right:0;bottom:0;z-index:1010;gap:10px;background:rgba(12,10,14,.96);
   backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
@@ -466,32 +537,47 @@ footer .fine{font-size:.7rem;color:var(--mut);opacity:.7}
       <h2>Let's get you <span class="gl">booked.</span></h2>
       <p>Booking runs through my page — pick your service and length, and grab a time that works.</p>
     </div>
-    <div class="asst rv">
-      <div class="asst-hd">
-        <span class="av">K</span>
-        <div><b>Kaia&#39;s assistant</b><small>answers instantly &middot; even when I&#39;m mid-set</small></div>
-        <span class="live">Uses my real menu</span>
+    <div class="bk-wrap rv">
+      <div class="bk-tabs">
+        <button class="bk-tab on" id="tabC">Book an appointment</button>
+        <button class="bk-tab" id="tabO">Kaia&#39;s view</button>
       </div>
-      <div class="chat" id="chat">
-        <div class="m bot">Hey! &#128133; I&#39;m Kaia&#39;s assistant. Tell me what you want and I&#39;ll price it out and get you booked. What are you thinking?</div>
+      <div class="bk-pane" id="paneC">
+        <div class="steps">
+          <span class="stp on" data-s="1">1 &middot; Service</span>
+          <span class="stp" data-s="2">2 &middot; Time</span>
+          <span class="stp" data-s="3">3 &middot; You</span>
+          <span class="stp" data-s="4">4 &middot; Deposit</span>
+        </div>
+        <div id="stepBody"></div>
       </div>
-      <div class="quick" id="quick">
-        <button data-q="xl gel-x full set with some art">XL set + art</button>
-        <button data-q="how much is a medium gel-x fill">Medium fill?</button>
-        <button data-q="just a gel polish change">Polish change</button>
-        <button data-q="short builder gel please">Short builder gel</button>
-      </div>
-      <div class="inbar">
-        <input id="cin" placeholder="Type it like you&#39;d text her&hellip;" autocomplete="off">
-        <button id="csend" aria-label="Send">&#10142;</button>
+      <div class="bk-pane hide" id="paneO">
+        <div class="ogrid">
+          <div class="obox">
+            <h4>Add a client myself</h4>
+            <input id="mName" placeholder="Client name">
+            <input id="mContact" placeholder="Phone or Instagram">
+            <select id="mSvc"></select>
+            <div class="two"><input id="mDate" type="date"><input id="mTime" type="time"></div>
+            <button class="go" id="mAdd">Add to my schedule</button>
+          </div>
+          <div class="obox">
+            <h4>Block time off</h4>
+            <input id="bDate" type="date">
+            <input id="bWhy" placeholder="Reason (optional)">
+            <button class="go alt" id="bAdd">Block this day</button>
+            <h4 style="margin-top:18px">Asked but didn&#39;t book</h4>
+            <div id="leadList"></div>
+          </div>
+        </div>
+        <div class="schedhd">
+          <h4>Everything booked</h4>
+          <button class="exp" id="expAll">Send all to my calendar</button>
+        </div>
+        <div id="apptList"></div>
       </div>
     </div>
-
-    <div class="lead-panel rv">
-      <h4>Kaia&#39;s side &mdash; nothing gets lost</h4>
-      <p class="lp">Every person who asks shows up here with what they wanted and how to reach them &mdash; even the ones who don&#39;t finish booking. That&#39;s the part a booking app never catches.</p>
-      <div id="leads"><p class="lempty">Try the assistant above and watch an enquiry land here.</p></div>
-    </div>
+    <p class="bnote" style="max-width:900px;margin:0 auto 26px"><b>Heads up:</b> this preview books into a demo calendar so you can try it. Live, it runs on Kaia&#39;s real hours and takes the deposit into her own account.</p>
 
     <div class="bc rv">
       <div class="bk-l">
@@ -548,99 +634,255 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 document.getElementById('yr').textContent=new Date().getFullYear();
 
-/* ---------- the assistant ----------
-   Quotes from Kaia's REAL menu, captures the enquiry, then hands off to her real
-   Goldie link. It never invents availability - her own calendar owns that. */
-var MENU=[
- {k:['xl','extra long'], t:'full', n:'XL Gel-X full set', p:65, d:'3 h'},
- {k:['long'],            t:'full', n:'L Gel-X full set',  p:60, d:'2 h 45'},
- {k:['medium'],          t:'full', n:'M Gel-X full set',  p:55, d:'2 h 30'},
- {k:['short',''],        t:'full', n:'S Gel-X full set',  p:50, d:'2 h 30'},
- {k:['xl','extra long'], t:'fill', n:'XL Gel-X fill',     p:65, d:'2 h 45'},
- {k:['long'],            t:'fill', n:'L Gel-X fill',      p:55, d:'2 h 30'},
- {k:['medium'],          t:'fill', n:'M Gel-X fill',      p:45, d:'2 h 30'},
- {k:['short',''],        t:'fill', n:'S Gel-X fill',      p:40, d:'2 h 15'},
- {k:['long'],            t:'builder', n:'L builder gel',  p:50, d:'2 h 30'},
- {k:['medium'],          t:'builder', n:'M builder gel',  p:45, d:'2 h 10'},
- {k:['short',''],        t:'builder', n:'S builder gel',  p:40, d:'2 h'},
- {k:[''],                t:'mani',   n:'Manicure',        p:35, d:'1 h 30'},
- {k:[''],                t:'polish', n:'Gel polish change', p:25, d:'1 h 5'}
-];
-function pickService(txt){
-  var m=' '+txt.toLowerCase()+' ', type='full';
-  if(/polish change|colour change|color change|just polish/.test(m)) type='polish';
-  else if(/manicure|\bmani\b/.test(m)) type='mani';
-  else if(/builder/.test(m)) type='builder';
-  else if(/fill|refill|rebalance/.test(m)) type='fill';
-  var cands=MENU.filter(function(x){return x.t===type;});
-  for(var i=0;i<cands.length;i++){
-    for(var j=0;j<cands[i].k.length;j++){
-      var key=cands[i].k[j];
-      if(key!=='' && m.indexOf(key)>-1) return cands[i];
-    }
-  }
-  return cands[cands.length-1];
+
+/* ============================================================
+   Kaia's real menu, prices and durations (from her own booking page).
+   HOURS: Mon/Tue/Fri confirmed from her listing; Wed/Thu/Sat are a
+   sensible evenings+weekend pattern pending her confirmation.
+   ============================================================ */
+var CONFIG = {
+  name: 'Clawed + Glossed',
+  depositPct: 10,                       // her stated policy: 10% deposit
+  slotStep: 30,
+  hours: {0:null, 1:[795,1290], 2:[990,1320], 3:[990,1320], 4:[990,1320], 5:[570,1260], 6:[570,1260]},
+  services: [
+    {id:'f_s',  name:'S Gel-X full set',  price:50, mins:150},
+    {id:'f_m',  name:'M Gel-X full set',  price:55, mins:150},
+    {id:'f_l',  name:'L Gel-X full set',  price:60, mins:165},
+    {id:'f_xl', name:'XL Gel-X full set', price:65, mins:180},
+    {id:'r_s',  name:'S Gel-X fill',      price:40, mins:135},
+    {id:'r_m',  name:'M Gel-X fill',      price:45, mins:150},
+    {id:'r_l',  name:'L Gel-X fill',      price:55, mins:150},
+    {id:'r_xl', name:'XL Gel-X fill',     price:65, mins:165},
+    {id:'b_s',  name:'S builder gel',     price:40, mins:120},
+    {id:'b_m',  name:'M builder gel',     price:45, mins:130},
+    {id:'b_l',  name:'L builder gel',     price:50, mins:150},
+    {id:'mani', name:'Manicure',          price:35, mins:90},
+    {id:'pol',  name:'Gel polish change', price:25, mins:65}
+  ]
+};
+
+/* ============================================================
+   ENGINE — availability, double-booking prevention, ICS export
+   ============================================================ */
+function pad(n){return String(n).padStart(2,'0')}
+function ymd(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
+function fromYMD(s){var p=s.split('-');return new Date(+p[0],+p[1]-1,+p[2])}
+function minsOf(d){return d.getHours()*60+d.getMinutes()}
+function fmtTime(d){var h=d.getHours(),m=d.getMinutes(),ap=h>=12?'PM':'AM';h=h%12||12;return h+':'+pad(m)+' '+ap}
+function fmtDay(d){return ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][d.getDay()]}
+function fmtDate(d){return fmtDay(d)+' '+['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][d.getMonth()]+' '+d.getDate()}
+function svcById(id){for(var i=0;i<CONFIG.services.length;i++){if(CONFIG.services[i].id===id)return CONFIG.services[i]}return null}
+
+/* overlap test: [aS,aE) vs [bS,bE) */
+function overlaps(aS,aMins,bS,bMins){
+  var aE=aS+aMins*60000, bE=bS+bMins*60000;
+  return aS < bE && bS < aE;
 }
-function wantsArt(t){return /art|design|chrome|charm|3d|french|cow|flower|glitter|bling|paint|cute|vibe/.test(t.toLowerCase());}
-
-var chat=document.getElementById('chat'), quick=document.getElementById('quick');
-var cin=document.getElementById('cin'), leadsEl=document.getElementById('leads');
-var leads=[], onText=null, pending=null;
-function sc(){chat.scrollTop=chat.scrollHeight;}
-function bub(h,w){var d=document.createElement('div');d.className='m '+(w||'bot');d.innerHTML=h;chat.appendChild(d);sc();return d;}
-function typ(){var d=document.createElement('div');d.className='typing';d.innerHTML='<i></i><i></i><i></i>';chat.appendChild(d);sc();return d;}
-function el(h){var w=document.createElement('div');w.innerHTML=h.trim();var n=w.firstChild;chat.appendChild(n);sc();return n;}
-function wait(ms){return new Promise(function(r){setTimeout(r,ms);});}
-function say(h,ms){var t=typ();return wait(ms||620).then(function(){t.remove();return bub(h);});}
-
-function handle(txt){
-  bub(txt.replace(/</g,'&lt;'),'me');
-  quick.style.display='none'; cin.value='';
-  if(onText){var f=onText; onText=null; return f(txt);}
-  var sv=pickService(txt), art=wantsArt(txt);
-  pending={svc:sv.n, price:sv.p};
-  say('Got it &mdash; let me price that up for you.',600).then(function(){
-    el('<div class="qcard"><h6>Your quote</h6>'+
-      '<div class="qline"><span>'+sv.n+'</span><span class="v">$'+sv.p+'</span></div>'+
-      '<div class="qline"><span>About how long</span><span class="v">'+sv.d+'</span></div>'+
-      (art?'<div class="qline"><span>Nail art add-on</span><span class="v">ask Kaia</span></div>':'')+
-      '<div class="qline"><span>Deposit to book</span><span class="v">$'+Math.round(sv.p*0.1)+'</span></div>'+
-      '<a class="go" href="https://book.heygoldie.com/Clawedandglossed" target="_blank" rel="noopener">Pick your time &rarr;</a>'+
-      '<p class="note">Opens Kaia&#39;s booking page for live availability</p></div>');
-    return say('Want me to let Kaia know you&#39;re coming? Send your <b>name + phone or insta</b>.',780);
-  }).then(function(){
-    onText=function(t){
-      var parts=t.split(/[,·]/), nm=(parts[0]||'Someone').trim(), ct=(parts[1]||'').trim();
-      return say('Perfect, '+nm.split(' ')[0]+' &mdash; Kaia&#39;s got it. Grab your time on the booking page and she&#39;ll see you soon &#128150;',700)
-        .then(function(){
-          leads.push({name:nm,contact:ct||'(no contact given)',svc:pending.svc,price:pending.price,status:'booked'});
-          renderLeads();
-        });
-    };
-    setTimeout(function(){
-      if(onText && pending){
-        onText=null;
-        leads.push({name:'Someone enquiring',contact:'(left without giving contact)',svc:pending.svc,price:pending.price,status:'follow'});
-        renderLeads();
-      }
-    },10000);
+/* the core: real open slots for a date, given a service and existing bookings */
+function openSlots(dateStr, svc, booked, now){
+  var day=fromYMD(dateStr), h=CONFIG.hours[day.getDay()];
+  if(!h) return [];                                  // closed that day
+  if(booked.some(function(b){return b.allDay && b.date===dateStr})) return []; // blocked off
+  var out=[], step=CONFIG.slotStep;
+  var latestStart=h[1]-svc.mins;                     // must finish before closing
+  for(var t=h[0]; t<=latestStart; t+=step){
+    var start=new Date(day); start.setHours(Math.floor(t/60), t%60, 0, 0);
+    if(now && start.getTime() <= now.getTime()) continue;   // no past times
+    var clash=booked.some(function(b){
+      if(b.allDay) return false;
+      if(b.date!==dateStr) return false;
+      return overlaps(start.getTime(), svc.mins, b.start, b.mins);
+    });
+    if(!clash) out.push(start);
+  }
+  return out;
+}
+function icsStamp(d){return d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate())+'T'+pad(d.getHours())+pad(d.getMinutes())+'00'}
+function icsDate(d){return d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate())}
+function buildICS(list){
+  var s='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//The Booking System//EN\r\nCALSCALE:GREGORIAN\r\n';
+  list.forEach(function(a,i){
+    s+='BEGIN:VEVENT\r\nUID:tbs-'+i+'-'+Math.abs(a.start)+'@bookingsystem\r\n';
+    var st=new Date(a.start);
+    if(a.allDay){var e=new Date(st);e.setDate(e.getDate()+1);
+      s+='DTSTART;VALUE=DATE:'+icsDate(st)+'\r\nDTEND;VALUE=DATE:'+icsDate(e)+'\r\n';}
+    else{var e2=new Date(a.start+a.mins*60000);
+      s+='DTSTART:'+icsStamp(st)+'\r\nDTEND:'+icsStamp(e2)+'\r\n';}
+    s+='SUMMARY:'+String(a.title).replace(/[,;]/g,' ')+'\r\n';
+    if(a.contact) s+='DESCRIPTION:Contact: '+String(a.contact).replace(/[,;]/g,' ')+'\r\n';
+    s+='END:VEVENT\r\n';
   });
+  return s+'END:VCALENDAR';
+}
+function downloadICS(list,name){
+  if(!list.length){alert('Nothing on the schedule yet.');return}
+  var b=new Blob([buildICS(list)],{type:'text/calendar;charset=utf-8'});
+  var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=(name||'schedule')+'.ics';
+  document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(function(){URL.revokeObjectURL(a.href)},2000);
+}
+
+/* ============================================================
+   UI
+   ============================================================ */
+
+if (typeof document !== 'undefined' && document.getElementById('stepBody')) {
+var booked=[], leads=[], sel={svc:null,date:null,slot:null,name:'',contact:''}, step=1;
+var body=document.getElementById('stepBody');
+
+function setStep(n){
+  step=n;
+  document.querySelectorAll('.stp').forEach(function(el){
+    var s=+el.getAttribute('data-s');
+    el.classList.toggle('on', s===n);
+    el.classList.toggle('done', s<n);
+  });
+  render();
+}
+function nextDays(n){
+  var out=[], d=new Date(); d.setHours(0,0,0,0);
+  for(var i=0;i<n;i++){var x=new Date(d); x.setDate(d.getDate()+i); out.push(x)}
+  return out;
+}
+function render(){
+  if(step===1){
+    body.innerHTML='<div class="svcgrid">'+CONFIG.services.map(function(s){
+      return '<button class="svc'+(sel.svc&&sel.svc.id===s.id?' sel':'')+'" data-id="'+s.id+'">'+
+        '<span class="p">$'+s.price+'</span><b>'+s.name+'</b><small>about '+
+        (s.mins>=60?Math.floor(s.mins/60)+' hr '+(s.mins%60?(s.mins%60)+' min':''):s.mins+' min')+'</small></button>';
+    }).join('')+'</div>';
+    body.querySelectorAll('.svc').forEach(function(b){
+      b.addEventListener('click',function(){ sel.svc=svcById(b.getAttribute('data-id')); sel.slot=null; setStep(2); });
+    });
+  }
+  else if(step===2){
+    var days=nextDays(14);
+    var h='<div class="daybar">'+days.map(function(d){
+      var shut=!CONFIG.hours[d.getDay()];
+      return '<button class="day'+(shut?' shut':'')+(sel.date===ymd(d)?' sel':'')+'" data-d="'+ymd(d)+'"'+(shut?' disabled':'')+'>'+
+        '<div class="dw">'+fmtDay(d)+'</div><div class="dd">'+d.getDate()+'</div></button>';
+    }).join('')+'</div>';
+    if(!sel.date) sel.date=ymd(days.find(function(d){return CONFIG.hours[d.getDay()]})||days[0]);
+    var slots=openSlots(sel.date, sel.svc, booked, new Date());
+    h+= slots.length
+      ? '<div class="slots">'+slots.map(function(s){return '<button class="slot'+(sel.slot===s.getTime()?' sel':'')+'" data-t="'+s.getTime()+'">'+fmtTime(s)+'</button>'}).join('')+'</div>'
+      : '<p class="none">Nothing open that day — try another.</p>';
+    h+='<p class="note" style="margin-top:16px">Showing real openings for <b style="color:var(--ac)">'+sel.svc.name+'</b> ('+sel.svc.mins+' min). Times already booked or outside opening hours are never offered.</p>';
+    h+='<div style="margin-top:18px"><button class="btn btn-o" id="back1">← Change service</button></div>';
+    body.innerHTML=h;
+    body.querySelectorAll('.day').forEach(function(b){b.addEventListener('click',function(){sel.date=b.getAttribute('data-d');sel.slot=null;render()})});
+    body.querySelectorAll('.slot').forEach(function(b){b.addEventListener('click',function(){sel.slot=+b.getAttribute('data-t');setStep(3)})});
+    document.getElementById('back1').addEventListener('click',function(){setStep(1)});
+  }
+  else if(step===3){
+    body.innerHTML='<div class="frm">'+
+      '<div><label>Your name</label><input id="cn" placeholder="e.g. Jess M." value="'+sel.name+'"></div>'+
+      '<div><label>Phone or Instagram</label><input id="cc" placeholder="e.g. 253-555-0148" value="'+sel.contact+'"></div>'+
+      '<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-p" id="toDep">Continue</button>'+
+      '<button class="btn btn-o" id="back2">← Change time</button></div></div>'+
+      '<p class="note">Your details are saved the moment you type them — so even if you stop here, they know you were interested.</p>';
+    document.getElementById('back2').addEventListener('click',function(){setStep(2)});
+    document.getElementById('toDep').addEventListener('click',function(){
+      sel.name=document.getElementById('cn').value.trim();
+      sel.contact=document.getElementById('cc').value.trim();
+      if(!sel.name){alert('Pop your name in so they know who is coming.');return}
+      // capture as a lead immediately — this is the bit booking apps miss
+      leads=leads.filter(function(l){return l.name!==sel.name});
+      leads.push({name:sel.name,contact:sel.contact||'(no contact given)',svc:sel.svc.name,when:fmtDate(new Date(sel.slot))+' · '+fmtTime(new Date(sel.slot))});
+      renderLeads();
+      setStep(4);
+    });
+  }
+  else if(step===4){
+    var dep=Math.round(sel.svc.price*CONFIG.depositPct/100);
+    var st=new Date(sel.slot);
+    body.innerHTML='<div class="sumbox">'+
+      '<div class="sumrow"><span>Service</span><span class="v">'+sel.svc.name+'</span></div>'+
+      '<div class="sumrow"><span>When</span><span class="v">'+fmtDate(st)+' at '+fmtTime(st)+'</span></div>'+
+      '<div class="sumrow"><span>Who</span><span class="v">'+sel.name+(sel.contact?' · '+sel.contact:'')+'</span></div>'+
+      '<div class="sumrow"><span>Service total</span><span class="v">$'+sel.svc.price+'</span></div>'+
+      '<div class="sumrow tot"><span>Deposit to book now</span><span class="dep">$'+dep+'</span></div></div>'+
+      '<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-p" id="pay">Pay $'+dep+' deposit &amp; book</button>'+
+      '<button class="btn btn-o" id="back3">← Back</button></div>'+
+      '<p class="note">In the real version this is a live card payment into <b>the business owner’s own</b> Stripe or Square. The deposit comes off the total.</p>';
+    document.getElementById('back3').addEventListener('click',function(){setStep(3)});
+    document.getElementById('pay').addEventListener('click',confirmBooking);
+  }
+}
+function confirmBooking(){
+  var st=new Date(sel.slot);
+  booked.push({date:ymd(st), start:sel.slot, mins:sel.svc.mins, title:sel.name+' — '+sel.svc.name,
+               contact:sel.contact, src:'online', svc:sel.svc.name});
+  leads=leads.filter(function(l){return l.name!==sel.name});
+  renderLeads(); renderAppts();
+  var one=[{start:sel.slot,mins:sel.svc.mins,title:sel.svc.name+' — '+CONFIG.name,contact:''}];
+  body.innerHTML='<div class="okbox"><div class="tick">✓</div><h3>You’re booked in</h3>'+
+    '<p>'+sel.svc.name+'<br>'+fmtDate(st)+' at '+fmtTime(st)+'</p>'+
+    '<div class="row2"><button class="btn btn-p" id="ics">Add to my calendar</button>'+
+    '<button class="btn btn-o" id="again">Book another</button></div></div>';
+  document.getElementById('ics').addEventListener('click',function(){downloadICS(one,'my-appointment')});
+  document.getElementById('again').addEventListener('click',function(){sel={svc:null,date:null,slot:null,name:'',contact:''};setStep(1)});
+  document.querySelectorAll('.stp').forEach(function(el){el.classList.remove('on');el.classList.add('done')});
+}
+
+/* owner side */
+function renderAppts(){
+  var el=document.getElementById('apptList');
+  if(!booked.length){el.innerHTML='<p class="empty">Nothing booked yet — take a booking in the client tab, or add one yourself.</p>';return}
+  var sorted=booked.slice().sort(function(a,b){return a.start-b.start});
+  booked=sorted;
+  el.innerHTML=sorted.map(function(a,i){
+    var st=new Date(a.start);
+    var when=a.allDay? fmtDate(st)+' · all day' : fmtDate(st)+' · '+fmtTime(st);
+    var lbl=a.src==='online'?'booked online':a.src==='manual'?'added by you':'blocked';
+    return '<div class="appt"><div><b>'+a.title+'</b><small>'+when+(a.contact?' · '+a.contact:'')+'</small></div>'+
+      '<div class="rt"><span class="src '+a.src+'">'+lbl+'</span>'+
+      '<button class="mini" data-c="'+i+'">Calendar</button><button class="x" data-i="'+i+'">✕</button></div></div>';
+  }).join('');
+  el.querySelectorAll('.x').forEach(function(b){b.addEventListener('click',function(){booked.splice(+b.getAttribute('data-i'),1);renderAppts()})});
+  el.querySelectorAll('.mini').forEach(function(b){b.addEventListener('click',function(){downloadICS([booked[+b.getAttribute('data-c')]],'appointment')})});
 }
 function renderLeads(){
-  if(!leads.length){leadsEl.innerHTML='<p class="lempty">Try the assistant above and watch an enquiry land here.</p>';return;}
-  leadsEl.innerHTML=leads.map(function(l){
-    return '<div class="lrow"><div><b>'+l.name+'</b> &mdash; '+l.svc+' ($'+l.price+')<small>'+l.contact+'</small></div>'+
-      '<span class="tag '+l.status+'">'+(l.status==='booked'?'sent to booking':'needs follow-up')+'</span></div>';
+  var el=document.getElementById('leadList');
+  if(!leads.length){el.innerHTML='<p class="empty">Anyone who starts and doesn’t finish shows up here.</p>';return}
+  el.innerHTML=leads.map(function(l){
+    return '<div class="appt"><div><b>'+l.name+'</b><small>'+l.svc+' · '+l.when+'<br>'+l.contact+'</small></div>'+
+      '<span class="src manual">follow up</span></div>';
   }).join('');
 }
-function submitChat(){var v=cin.value.trim(); if(v) handle(v);}
-document.getElementById('csend').addEventListener('click',submitChat);
-cin.addEventListener('keydown',function(e){if(e.key==='Enter')submitChat();});
-Array.prototype.forEach.call(quick.querySelectorAll('button'),function(b){
-  b.addEventListener('click',function(){handle(b.getAttribute('data-q'));});
+var sv=document.getElementById('mSvc');
+sv.innerHTML=CONFIG.services.map(function(s){return '<option value="'+s.id+'">'+s.name+' — $'+s.price+'</option>'}).join('');
+document.getElementById('mAdd').addEventListener('click',function(){
+  var n=document.getElementById('mName').value.trim(), c=document.getElementById('mContact').value.trim();
+  var s=svcById(document.getElementById('mSvc').value);
+  var d=document.getElementById('mDate').value, t=document.getElementById('mTime').value;
+  if(!n||!d||!t){alert('Needs a name, a date and a time.');return}
+  var start=new Date(d+'T'+t).getTime();
+  var clash=booked.some(function(b){return !b.allDay && b.date===d && overlaps(start,s.mins,b.start,b.mins)});
+  if(clash){alert('That overlaps something already booked — pick another time.');return}
+  booked.push({date:d,start:start,mins:s.mins,title:n+' — '+s.name,contact:c,src:'manual',svc:s.name});
+  ['mName','mContact','mDate','mTime'].forEach(function(id){document.getElementById(id).value=''});
+  renderAppts();
 });
-renderLeads();
-
+document.getElementById('bAdd').addEventListener('click',function(){
+  var d=document.getElementById('bDate').value, w=document.getElementById('bWhy').value.trim();
+  if(!d){alert('Pick a date to block.');return}
+  booked.push({date:d,start:new Date(d+'T00:00').getTime(),mins:0,allDay:true,title:'Blocked'+(w?' — '+w:''),src:'block'});
+  document.getElementById('bDate').value='';document.getElementById('bWhy').value='';
+  renderAppts();
+});
+document.getElementById('expAll').addEventListener('click',function(){downloadICS(booked,'my-schedule')});
+document.getElementById('tabC').addEventListener('click',function(){
+  this.classList.add('on');document.getElementById('tabO').classList.remove('on');
+  document.getElementById('paneC').classList.remove('hide');document.getElementById('paneO').classList.add('hide');
+});
+document.getElementById('tabO').addEventListener('click',function(){
+  this.classList.add('on');document.getElementById('tabC').classList.remove('on');
+  document.getElementById('paneO').classList.remove('hide');document.getElementById('paneC').classList.add('hide');
+});
+document.getElementById('yr').textContent=new Date().getFullYear();
+setStep(1); renderAppts(); renderLeads();
+}
 </script>
 </body>
 </html>
